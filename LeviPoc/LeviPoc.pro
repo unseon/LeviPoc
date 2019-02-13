@@ -2,5 +2,6 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     HelloLevi \
-    ScriptConsole
+    ScriptConsole \
+    Thumbnail
 

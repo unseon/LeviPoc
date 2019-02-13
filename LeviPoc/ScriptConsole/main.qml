@@ -33,7 +33,6 @@ Window {
                 focus: true
 
                 Keys.onReturnPressed: {
-                    console.log(event.modifiers);
                     if (event.modifiers & Qt.ControlModifier) {
                         console.log("onReturenPressed");
                         runCommand(textInput.text);
@@ -44,6 +43,7 @@ Window {
                 }
 
                 function runCommand(cmd) {
+                    console.log("this: " + this);
                     try {
                         var result = eval(cmd);
 
