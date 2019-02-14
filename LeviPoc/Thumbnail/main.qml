@@ -10,28 +10,29 @@ QtObject {
             height: 480
             title: qsTr("Hello World")
 
-            Item {
-                id: frame
-                anchors.fill: parent
+//            Rectangle {
+//                id: frame
+//                anchors.fill: parent
+//                color: "yellow"
 
-                Rectangle {
-                    id: rectangle
-                    x: 47
-                    y: 50
-                    width: 200
-                    height: 200
-                    color: "#cc3838"
-                    radius: 33
-                    border.width: 14
+//                Rectangle {
+//                    id: rectangle
+//                    x: 47
+//                    y: 50
+//                    width: 200
+//                    height: 200
+//                    color: "#cc3838"
+//                    radius: 33
+//                    border.width: 14
 
-                    MouseArea {
-                        anchors.fill: parent
-                        onClicked: {
-                            mainWindow.visible = false;
-                        }
-                    }
-                }
-            }
+//                    MouseArea {
+//                        anchors.fill: parent
+//                        onClicked: {
+//                            mainWindow.visible = false;
+//                        }
+//                    }
+//                }
+//            }
         }
 
     property var captureWindow:
@@ -43,34 +44,32 @@ QtObject {
             height: 480
             title: qsTr("CaptureWindow")
 
-
             Rectangle {
-                id: rect
-                x: 300
-                y: 300
+                id: frame
+                anchors.fill: parent
+                color: "yellow"
 
-                width: 60
-                height: 60
-
-                color: "green"
-                radius: 20
-
-                NumberAnimation {
-                    target: rect
-                    property: "rotation"
-                    from: 0
-                    to: 360
-
-                    duration: 1000
-                    loops: -1
-                    running: true
+                Rectangle {
+                    id: rectangle
+                    x: 47
+                    y: 50
+                    width: 200
+                    height: 200
+                    color: "#cc3838"
+                    radius: 33
+                    border.width: 14
                 }
             }
 
 
-            Item {
+
+
+
+            Rectangle {
                 id: capturFrame
                 anchors.fill: parent
+
+                color: "white"
 
                 Rectangle {
                     x: 47
@@ -91,9 +90,10 @@ QtObject {
                                 //mainWindow.visible = true;
                                 frame.grabToImage(function(result){
                                     result.saveToFile(filename + i + ".png");
+                                    image.source = "file:" + filename + i + ".png";
 
                                     i++;
-                                    if (i < 100) {
+                                    if (i < 1) {
                                         capture();
                                     }
                                 });
@@ -106,6 +106,45 @@ QtObject {
                         onClicked: {
 
                             captureImages("capture");
+                        }
+                    }
+                }
+
+                Image {
+                    id: image
+                    width: parent.width / 2
+                    height: parent.height / 2
+
+                    //source: "file:capture0.png"
+                }
+
+                Rectangle {
+                    id: rect
+                    x: 300
+                    y: 300
+
+                    width: 60
+                    height: 60
+
+                    color: "green"
+                    radius: 20
+
+                    SequentialAnimation {
+                        loops: -1
+                        running: true
+
+                        NumberAnimation {
+                            target: rect
+                            property: "rotation"
+                            from: 0
+                            to: 90
+
+                            duration: 200
+                        }
+
+
+                        PauseAnimation {
+                            duration: 800
                         }
                     }
                 }
