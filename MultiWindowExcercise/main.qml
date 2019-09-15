@@ -7,7 +7,7 @@ QtObject {
         visible: true
         width: 640
         height: 480
-        title: qsTr("Hello World")
+        title: qsTr("Hello World2")
 
         flags: Qt.ForeignWindow
 
@@ -29,7 +29,7 @@ QtObject {
         visible: true
         width: 640
         height: 480
-        title: qsTr("Hello World")
+        title: qsTr("Hello World1")
 
         Item {
             anchors.fill: parent
