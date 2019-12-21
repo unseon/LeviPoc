@@ -71,7 +71,7 @@ public:
 
     void renderMovie(const QString &qmlFile, const QString &filename, const QString &outputDirectory, const QString &outputFormat, const QSize &size, qreal devicePixelRatio = 1.0, int durationMs = 1000, int fps = 24);
 
-    ~MovieRenderer();
+    ~MovieRenderer() override;
 
     int progress() const;
 

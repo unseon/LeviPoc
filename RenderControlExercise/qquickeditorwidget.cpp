@@ -9,6 +9,7 @@ QQuickEditorWidget::QQuickEditorWidget(QWidget* parent)
     , m_movieRenderer(new MovieRenderer)
 {
     connect(m_movieRenderer, SIGNAL(finished()), this, SLOT(handleMovieFinished()));
+    renderMovie();
 }
 
 QQuickEditorWidget::~QQuickEditorWidget()
