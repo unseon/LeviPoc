@@ -59,6 +59,7 @@
 #include <QtConcurrent>
 
 #include "animationdriver.h"
+#include "QtQml/private/qqmlengine_p.h"
 
 MovieRenderer::MovieRenderer(QObject *parent)
     : QObject(parent)
@@ -90,6 +91,8 @@ MovieRenderer::MovieRenderer(QObject *parent)
     m_quickWindow = new QQuickWindow(m_renderControl);
 
     m_qmlEngine = new QQmlEngine;
+
+    //QQmlEnginePrivate::activateDesignerMode();
 
     m_context->makeCurrent(m_offscreenSurface);
     m_renderControl->initialize(m_context);

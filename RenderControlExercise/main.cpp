@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 
 
     QQuickEditorWidget editor;
-    editor.resize(100, 100);
+    editor.resize(500, 500);
     editor.show();
 
     editor.renderMovie();

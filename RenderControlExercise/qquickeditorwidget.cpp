@@ -22,9 +22,9 @@ void QQuickEditorWidget::renderMovie()
 
 
     //Star Render
-    m_movieRenderer->renderMovie("/Users/unseon/github/LeviPoc/RenderControlExercise/main.qml", "output.png",
+    m_movieRenderer->renderMovie("file:C:/github/LeviPoc/RenderControlExercise/main.qml", "output.png",
                                  ".", "png",
-                                 QSize(100, 100), 1.0,
+                                 QSize(size().width(), size().height()), 1.0,
                                  0, 0);
 
 }
