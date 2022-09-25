@@ -104,10 +104,25 @@ Item {
 
         function onReleased(mouse: MouseEvent) {
             pressed = false
+            canvasDragMarquee.visible = false
+            rectangleCommand.execute()
         }
 
         function onCanceled() {
 
+        }
+    }
+
+    Command {
+        id: rectangleCommand
+
+        function execute() {
+            var newObject = Qt.createQmlObject('import QtQuick; Rectangle{}', canvas)
+            newObject.x = canvasDragMarquee.x
+            newObject.y = canvasDragMarquee.y
+            newObject.width = canvasDragMarquee.width
+            newObject.height = canvasDragMarquee.height
+            newObject.color = "gray"
         }
     }
 

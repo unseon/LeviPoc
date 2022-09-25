@@ -15,6 +15,11 @@ Page {
     width: Constants.width
     height: Constants.height
 
+    Item {
+        id: recycles
+        visible: false
+    }
+
     AppFrameBehavior {
         id: behavior
 
@@ -131,12 +136,68 @@ Page {
 
             Rectangle {
                 id: canvasDragMarquee
-                color: "transparent"
+                color: "#dddddd"
                 border.color: "blue"
-                //visible: false
+                visible: false
 
                 width: 100
                 height: 100
+
+                Item {
+                    x: 0
+                    y: 0
+
+                    Rectangle {
+                        border.color: "blue"
+                        color: "white"
+                        width: 7
+                        height: 7
+                        x: -4
+                        y: -4
+                    }
+                }
+
+                Item {
+                    x: parent.width
+                    y: parent.height
+
+                    Rectangle {
+                        border.color: "blue"
+                        color: "white"
+                        width: 7
+                        height: 7
+                        x: -4
+                        y: -4
+                    }
+                }
+
+                Item {
+                    x: parent.width
+
+                    Rectangle {
+                        border.color: "blue"
+                        color: "white"
+                        width: 7
+                        height: 7
+                        x: -4
+                        y: -4
+                    }
+                }
+
+                Item {
+                    y: parent.height
+
+                    Rectangle {
+                        border.color: "blue"
+                        color: "white"
+                        width: 7
+                        height: 7
+                        x: -4
+                        y: -4
+                    }
+                }
+
+
             }
         }
 
