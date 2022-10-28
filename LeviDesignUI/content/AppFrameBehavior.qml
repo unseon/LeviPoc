@@ -12,6 +12,22 @@ Item {
         Marquee
     }
 
+    Action {
+        text: "Undo"
+        shortcut: StandardKey.Undo
+        onTriggered: (source) => {
+            commandManager.undo()
+        }
+    }
+
+    Action {
+        text: "Redo"
+        shortcut: StandardKey.Redo
+        onTriggered: (source) => {
+            commandManager.redo()
+        }
+    }
+
     property int canvasMode: AppFrameBehavior.CanvasMode.Select
 
     //default property list<Connections> conn
@@ -105,7 +121,11 @@ Item {
         function onReleased(mouse: MouseEvent) {
             pressed = false
             canvasDragMarquee.visible = false
-            rectangleCommand.execute()
+
+
+            var cmd = Qt.createQmlObject("AppFrameBehavior.CreateRectangle{}", commandManager)
+            commandManager.executeCommand(cmd)
+            //rectangleCommand.execute()
         }
 
         function onCanceled() {
@@ -113,8 +133,10 @@ Item {
         }
     }
 
-    Command {
+    component CreateRectangle: Command {
         id: rectangleCommand
+        property Rectangle rectangle
+        property Item originParent
 
         function execute() {
             var newObject = Qt.createQmlObject('import QtQuick; Rectangle{}', canvas)
@@ -123,7 +145,23 @@ Item {
             newObject.width = canvasDragMarquee.width
             newObject.height = canvasDragMarquee.height
             newObject.color = "gray"
+
+            rectangle = newObject
         }
+
+        function undo() {
+            originParent = rectangle.parent
+            rectangle.parent = null
+        }
+
+        function redo() {
+            rectangle.parent = originParent
+        }
+    }
+
+    Item {
+        id: recycles
+        visible: false
     }
 
 

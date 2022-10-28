@@ -42,5 +42,48 @@ Window {
         id: mainScreen
     }
 
+
+    QtObject {
+        id: commandManager
+
+        property list<QtObject> undoStack
+        property list<QtObject> redoStack
+
+
+        function executeCommand(command) {
+            command.execute()
+            undoStack.push(command)
+            //clear redoStack
+            redoStack.length = 0
+        }
+
+        function undo() {
+            if (undoStack.length === 0)
+                return
+
+            // pop undoStack
+            // push redoStack
+
+            var cmd = undoStack[undoStack.length-1]
+            undoStack.length--
+            cmd.undo()
+            redoStack.push(cmd)
+
+        }
+
+        function redo() {
+            if (redoStack.length === 0)
+                return
+
+            // push undoStack
+            // pop redoStack
+
+            var cmd = redoStack[redoStack.length-1]
+            redoStack.length--
+            cmd.redo()
+            undoStack.push(cmd)
+        }
+    }
+
 }
 

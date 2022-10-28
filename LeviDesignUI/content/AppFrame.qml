@@ -15,6 +15,8 @@ Page {
     width: Constants.width
     height: Constants.height
 
+    focus: true
+
     Item {
         id: recycles
         visible: false
@@ -22,6 +24,8 @@ Page {
 
     AppFrameBehavior {
         id: behavior
+
+        focus: true
 
         Connections {
             target: btnDrawRect
