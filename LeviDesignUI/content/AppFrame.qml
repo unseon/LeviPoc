@@ -48,32 +48,34 @@ Page {
         }
     }
 
-    header: TabBar {
+    header: ToolBar {
         id: tabBar
-        TabButton {
-            id: tabHome
-            icon.source: "images/icon_home"
-            width: 50
-        }
+        Row {
+            ToolButton {
+                id: tabHome
+                icon.source: "images/icon_home"
+                width: 50
+            }
 
-        TabButton {
-            id: tabButton
-            icon.source: "images/design_services"
-            text: qsTr("Tab Button")
-            width: 150
-        }
+            ToolButton {
+                id: tabButton
+                icon.source: "images/design_services"
+                text: qsTr("Tab Button")
+                width: 150
+            }
 
-        TabButton {
-            id: tabButton1
-            icon.source: "images/design_services"
-            text: qsTr("Tab Button")
-            width: 150
-        }
+            ToolButton {
+                id: tabButton1
+                icon.source: "images/design_services"
+                text: qsTr("Tab Button")
+                width: 150
+            }
 
-        TabButton {
-            id: addButton
-            text: qsTr("+")
-            width: 50
+            ToolButton {
+                id: addButton
+                text: qsTr("+")
+                width: 50
+            }
         }
     }
 
