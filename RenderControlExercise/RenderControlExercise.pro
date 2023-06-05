@@ -1,4 +1,4 @@
-QT += quick qml widgets concurrent
+QT += quick qml widgets concurrent qml-private
 CONFIG += c++11
 
 CONFIG += sdk_no_version_check
