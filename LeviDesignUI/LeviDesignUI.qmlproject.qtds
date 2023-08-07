@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtDesignStudio 3.5.0, 2022-11-10T00:45:06. -->
+<!-- Written by QtDesignStudio 4.0.1, 2023-07-20T04:59:25. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -54,14 +54,15 @@
    <value type="QString" key="EditorConfiguration.ignoreFileTypes">*.md, *.MD, Makefile</value>
    <value type="bool" key="EditorConfiguration.inEntireDocument">false</value>
    <value type="bool" key="EditorConfiguration.skipTrailingWhitespace">true</value>
+   <value type="bool" key="EditorConfiguration.tintMarginArea">true</value>
   </valuemap>
  </data>
  <data>
   <variable>ProjectExplorer.Project.Target.0</variable>
   <valuemap type="QVariantMap">
    <value type="QString" key="DeviceType">Desktop</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 6.3.1</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 6.3.1</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 6.4.1</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 6.4.1</value>
    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{63f87550-2541-4163-9631-08b7fea781da}</value>
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveBuildConfiguration">-1</value>
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
