@@ -52,6 +52,10 @@ int main(int argc, char *argv[])
     // if we make t true we also have to give a value...
     MutableDomItem addedPDef = qmlObj.addPropertyDef(b);
 
+    QmlObject subObj;
+    subObj.setName(QLatin1String("Item"));
+    MutableDomItem addedSubObj = qmlObj.addChild(subObj);
+
     dItem.commitToBase();
 
     QString outputString;
